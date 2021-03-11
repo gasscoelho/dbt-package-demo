@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+    - name: information_schema
+      tags: ['information_schema']
+      tables: 
+        # tables
+        - name: tables
+          columns:
+            - name: concat(table_catalog, table_schema, table_name)
+              tests:
+                - unique

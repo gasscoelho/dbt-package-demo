@@ -1,0 +1,24 @@
+name: 'dbt_pkg_demo'
+version: '0.0.1'
+
+config-version: 2
+
+require-dbt-version: ">=0.17.0"
+
+# Paths Configuration
+source-paths: ["models"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+log-path: "logs"
+
+# directory which will store compiled SQL files
+target-path: "target"  
+
+# Snapshots Configuration
+snapshots:
+    dbt_pkg_demo:
+        transient: true
+        information_schema:
+            target_schema: raw_info_schema
